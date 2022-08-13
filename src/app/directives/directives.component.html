@@ -1,0 +1,13 @@
+<button
+  class="btn btn-primary"
+  (click)="handleClick()">Display Details</button>
+
+<p *ngIf="showDetails">The secret pass is {{ secretPass }}</p>
+
+<hr>
+
+<div class="container">
+  <p *ngFor="let logItem of clickLog; let idx = index"
+    [ngClass]="{logItem: idx >= 4}"
+    [ngStyle]="{backgroundColor: idx >= 4 ? 'blue' : 'transparent'}">{{ logItem }} seconds</p>
+</div>
